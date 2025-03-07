@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media (min-width:320px){
+.small{
+background-color: red;
+color: blue;
+}
+}
