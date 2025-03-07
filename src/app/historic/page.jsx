@@ -1,10 +1,10 @@
-import Products from "../components/Products"
+import Historic from "../components/Historic"
 import HistoricImage from "../components/SHistoricImage"
 const page = () => {
   return (
    <div>
      <HistoricImage/>
-     <Products/>
+     <Historic/>
    </div>
   )
 }

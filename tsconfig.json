@@ -22,6 +22,28 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/Opinon.tsx", "src/app/ss/page.jsx", "src/app/components/Products.jsx", "src/app/components/SHistoricImage.jsx", "src/app/historic/page.jsx", "src/app/try/ProductSlider.jsx", "src/app/try/CategoryFilter.jsx", "src/app/product/[id]/page.jsx", "src/app/components/ImgCollection.jsx", "src/app/components/ImgRelated.jsx", "src/app/components/Fixed.jsx", "src/app/components/fixedimg.jsx", "src/app/fixed/page.jsx", "src/app/components/Sunken.jsx", "src/app/fixed/[id]/page.jsx", "src/app/sunken/[id]/page.jsx", "src/app/sunken/page.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/components/Opinon.tsx",
+    "src/app/ss/page.jsx",
+    "src/app/components/Historic.jsx",
+    "src/app/components/SHistoricImage.jsx",
+    "src/app/historic/page.jsx",
+    "src/app/try/ProductSlider.jsx",
+    "src/app/try/CategoryFilter.jsx",
+    "src/app/product/[id]/page.jsx",
+    "src/app/components/ImgCollection.jsx",
+    "src/app/components/ImgRelated.jsx",
+    "src/app/components/Fixed.jsx",
+    "src/app/components/fixedimg.jsx",
+    "src/app/fixed/page.jsx",
+    "src/app/components/Sunken.jsx",
+    "src/app/fixed/[id]/page.jsx",
+    "src/app/sunken/[id]/page.jsx",
+    "src/app/sunken/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }

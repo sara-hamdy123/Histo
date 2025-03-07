@@ -9,7 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CategoryFilter from "../try/CategoryFilter";
 import ProductSlider from "../try/ProductSlider";
-const Products = () => {
+const Historic = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [count, setCount] = useState(8);
@@ -105,4 +105,4 @@ const Products = () => {
     </div>
   );
 };
-export default Products;
+export default Historic;
