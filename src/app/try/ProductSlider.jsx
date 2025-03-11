@@ -41,11 +41,11 @@ export default function ProductSlider({ category }) {
     const paginatedProducts = products.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 ">
             <Swiper
                 modules={[Navigation, Grid]}
                 navigation
-                spaceBetween={10}
+                spaceBetween={2} // ✅ مسافات صغيرة جدًا بين الصور
                 slidesPerView={1}
                 grid={{ rows: 2, fill: "row" }}
                 loop={false}
@@ -54,17 +54,27 @@ export default function ProductSlider({ category }) {
                     640: { slidesPerView: 2 },
                     768: { slidesPerView: 3 },
                 }}
-                className="mt-6"
+                className="mt-6 "
             >
-                {paginatedProducts.map((product) => (
+                {paginatedProducts.map((product, index) => (
                     <SwiperSlide key={product.id}>
-                        <div className="relative ">
+                        <div
+                            className={`relative 
+                                ${index === 3 ? "mt-[0rem] " : ""} 
+                                ${index === 5 ? "absolute top-[-12rem]" : ""} 
+                                ${index === 2 ? "absolute top-[-4rem]" : ""} 
+                                ${index === 4 ? "mt-[-9rem]" : ""} 
+                                // ${index !== 3 && index !== 5 ? "mb-4" : ""}
+                            }`} // ✅ إزالة المسافة بين الفهارس المحددة
+                        >
                             <Image
                                 src={product.image}
                                 alt=""
-                                className={`cursor-pointer  mt-3 rounded-2xl object-contain w-[396.79px] ${product.id %2===0 } ? "h-[529.65px]":"h-[346px]"`}
-                                width={350}
-                                height={200}
+                                className={`cursor-pointer rounded-2xl object-contain w-[500px] ${
+                                    product.id % 2 === 0 ? "h-[350px] " : "h-[500px] "
+                                }`}
+                                width={500}
+                                height={product.id % 2 === 0 ? 250 : 400}
                                 onClick={() => {
                                     setIsOpen(true);
                                     setCurrentIndex(products.indexOf(product));

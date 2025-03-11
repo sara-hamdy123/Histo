@@ -127,37 +127,47 @@ const Fixed = () => {
       )}
 
 <div className="container mx-auto px-4 py-10">
-      <h2 className="text-center text-3xl font-bold mb-6">Did you know?</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {products.slice(0, 3).map((product) => (
-          <div
-            key={product.id}
-            className="relative w-full h-[400px] overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
-            onMouseEnter={() => setHovered(product.id)}
-            onMouseLeave={() => setHovered(null)}
-          >
-            {/* صورة المنتج */}
-            <Image
-              src={product.image}
-              alt={product.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg transition-opacity duration-500"
-            />
+  <h2 className="text-center text-3xl font-bold mb-6">Did you know?</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {products.slice(0, 3).map((product) => (
+      <div
+        key={product.id}
+        className="relative w-full h-[400px] overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
+        onMouseEnter={() => setHovered(product.id)}
+        onMouseLeave={() => setHovered(null)}
+      >
+        {/* صورة المنتج */}
+        <Image
+          src={product.image}
+          alt={product.title}
+          layout="fill"
+          objectFit="fill"
+          className="rounded-lg transition-opacity duration-500"
+        />
 
-            {/* الخلفية السوداء والديسكريبشن عند الهوفر */}
-            <div
-              className={`absolute inset-0 bg-black transition-opacity duration-500 flex items-end justify-between text-start text-white px-6  rounded-lg ${
-                hovered === product.id ? "opacity-50" : "opacity-0"
-              }`}
-            >
-              <p className="text-lg font-semibold ">{product.description.slice(0,170)}</p>
-              <PhotoIcon className="w-[150px] h-[150px] text-white" />
-            </div>
-          </div>
-        ))}
-      </div>
+        {/* الخلفية السوداء والديسكريبشن عند الهوفر */}
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-500 flex items-end text-white px-6 rounded-lg ${
+            hovered === product.id ? "opacity-50" : "opacity-0"
+          }`}
+        />
+
+        {/* النص المتحرك من الأسفل للأعلى */}
+        <div
+          className={`absolute bottom-0 left-0 w-full px-6 py-4 text-lg font-semibold text-white transition-transform duration-700 ${
+            hovered === product.id ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
+           <div className="flex items-center gap-4">
+      <p className="text-lg font-semibold text-white">{product.description.slice(0, 170)}</p>
+      <PhotoIcon className="w-[150px] h-[150px] text-white" />
     </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };
