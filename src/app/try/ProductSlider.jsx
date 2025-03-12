@@ -60,21 +60,17 @@ export default function ProductSlider({ category }) {
                     <SwiperSlide key={product.id}>
                         <div
                             className={`relative 
-                                ${index === 3 ? "mt-[0rem] " : ""} 
-                                ${index === 5 ? "absolute top-[-12rem]" : ""} 
-                                ${index === 2 ? "absolute top-[-4rem]" : ""} 
-                                ${index === 4 ? "mt-[-9rem]" : ""} 
-                                // ${index !== 3 && index !== 5 ? "mb-4" : ""}
+                                ${index === 4 ? "mt-[-7rem]" : ""} 
                             }`} // ✅ إزالة المسافة بين الفهارس المحددة
                         >
                             <Image
                                 src={product.image}
                                 alt=""
-                                className={`cursor-pointer rounded-2xl object-contain w-[500px] ${
-                                    product.id % 2 === 0 ? "h-[350px] " : "h-[500px] "
+                                className={`cursor-pointer rounded-2xl object-fill mt-6  ${
+                                    product.id % 2 == 1 ? "h-[450px] " : "h-[350px] "
                                 }`}
-                                width={500}
-                                height={product.id % 2 === 0 ? 250 : 400}
+                                width={350}
+                                height={250}
                                 onClick={() => {
                                     setIsOpen(true);
                                     setCurrentIndex(products.indexOf(product));
